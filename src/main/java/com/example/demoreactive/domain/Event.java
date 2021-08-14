@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
-public final class Event {
+public class Event {
     @Id
     private Long id;
     private EventName eventName;

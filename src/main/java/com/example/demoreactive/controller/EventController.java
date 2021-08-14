@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.time.Duration;
-
 @RestController
 @RequestMapping("/events")
 public class EventController {
@@ -28,7 +26,7 @@ public class EventController {
 
     @GetMapping(value = "/", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Event> findAll() {
-        return eventFacility.findAll().delayElements(Duration.ofSeconds(1));
+        return eventFacility.findAll();
     }
 
     @PostMapping("/")
